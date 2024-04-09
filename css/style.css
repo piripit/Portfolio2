@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root {
+    --my-color-gris: white;
+    --my-color-gri: grey;
+    --my-color-blue: blue;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--my-color-gris);
+}
+
+.entete {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 80px;
+    line-height: 80px;
+    z-index: 111;
+}
+
+.logo {
+    display: flex;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--my-color-gri);
+    letter-spacing: 3px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+b {
+    font-size: 70px;
+    color: var(--my-color-blue);
+}
+
+.logo span {
+    color: var(--my-color-blue);
+}
+
+.menu {
+    display: flex;
+}
+.menu li{
+    margin: 0 15px;
+}
+.menu li a{
+    font-size: 25px;
+    letter-spacing: 3px;
+    color: var(--my-color-gri);
+    text-transform: capitalize;
+}
+.menu li:hover a{
+    color: var(--my-color-blue);
+}

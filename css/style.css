@@ -4,6 +4,8 @@
     --my-color-gris: white;
     --my-color-gri: gray;
     --my-color-blue: blue;
+    --my-color-cy: darkcyan;
+
 }
 
 * {
@@ -46,11 +48,11 @@ body {
 
 b {
     font-size: 70px;
-    color: var(--my-color-blue);
+    color: var(--my-color-cy);
 }
 
 .logo span {
-    color: var(--my-color-blue);
+    color: var(--my-color-cy);
 }
 
 .menu {
@@ -69,7 +71,7 @@ b {
 }
 
 .menu li:hover a {
-    color: var(--my-color-blue);
+    color: var(--my-color-cy);
 }
 
 .corps {
@@ -80,6 +82,44 @@ b {
     align-items: center;
     padding: 0 10%;
     overflow: hidden;
+}
+
+.corps::before {
+    position: absolute;
+    content: '';
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, cyan, pink);
+    left: -17%;
+    top: 40%;
+    animation: beforeAnime 6s linear infinite;
+}
+
+.corps::after {
+    position: absolute;
+    content: '';
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, cyan, pink);
+    left: 35%;
+    top: 15%;
+    animation: afterAnime 6s linear infinite;
+}
+
+@keyframes beforeAnime {
+    50% {
+        top: 41%;
+        left: -13%;
+    }
+}
+
+@keyframes afterAnime {
+    50% {
+        top: 10%;
+        left: 27%;
+    }
 }
 
 .cgauche,
@@ -193,4 +233,51 @@ button:hover {
 
 }
 
-.cdroite {}
+#textDefile {
+    color: var(--my-color-cy);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+/* Style pour le bouton de fermeture */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

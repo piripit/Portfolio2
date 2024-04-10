@@ -299,3 +299,35 @@ button:hover {
     object-fit: cover;
 
 }
+
+#projects-modal .modal-content {
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  #projects-modal .modal-content h2 {
+    color: var(--my-color-gri);
+  }
+  
+  #projects-modal .modal-content .projects-container {
+    margin-top: 20px;
+  }
+  
+  #projects-modal .modal-content .project {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  #projects-modal .modal-content .project img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  #projects-modal .modal-content .project-links a {
+    display: inline-block;
+    margin-right: 10px;
+    color: blue;
+    text-decoration: none;
+  }

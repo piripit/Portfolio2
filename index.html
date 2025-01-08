@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/main.css" />
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <title>Document</title>
   </head>
   <body>
     <div class="container">
       <nav class="entete">
-        <div class="logo"><span>D</span>eveloppeur<b>.</b></div>
         <div class="menu">
           <li><a href="#">Accueil</a></li>
           <li><a href="#" id="about-link">A propos</a></li>
           <li><a href="#" id="skills-link">Compétences</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="#">Projets</a></li>
+          <li><a href="#">Veille</a></li>
+          <li><a href="#">Entreprise</a></li>
+          <li><a href="#">Contact</a></li>
         </div>
       </nav>
       <div class="corps">
@@ -23,8 +26,7 @@
           <span class="textB">Salut</span>
           <h1>Je suis <span id="textDefile"></span></h1>
           <p>
-            Developpement Web | Technicien de support informatique | Chef de
-            projet
+            Apprenti Developpeur Web | Technicien de support informatique
           </p>
           <div class="buton">
             <button id="cvDownloadBtn">Telecharger CV</button>
@@ -39,6 +41,8 @@
         </div>
       </div>
     </div>
+    <h1>Nombre de visiteurs : <span id="visitsCount">0</span></h1>
+
     <div id="about-modal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal()">&times;</span>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projets de Cours</title>
+    <style>
+      /* Ajout de la barre de navigation avec les styles */
+      nav {
+        background-color: #333; /* Fond noir */
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center; /* Centrer les éléments */
+        align-items: center; /* Alignement vertical */
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .menu li {
+        margin: 0 10px; /* Espacement réduit entre les éléments */
+      }
+
+      .menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px; /* Taille réduite pour les liens */
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        padding: 8px 12px; /* Padding ajusté */
+        display: inline-block;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+      }
+
+      .menu a:hover {
+        background-color: #555;
+        transform: scale(1.05); /* Légère augmentation pour l'effet de survol */
+      }
+
+      /* Autres styles */
+      .Container {
+        padding: 2rem;
+      }
+
+      .header h1 {
+        text-align: center;
+        color: white;
+      }
+
+      .project-list ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .project-list li {
+        margin: 10px 0;
+      }
+
+      .project-list a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+
+      .project-list a:hover {
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="#">Tableau</a></li>
+        <li><a href="projet.html">Projets</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="Container">
+      <header class="header">
+        <h1>Projets d'entreprise</h1>
+      </header>
+      <main class="project-list">
+        <ul>
+          <li>
+            <a href="https://github.com/votrecompte/projet1" target="_blank"
+              >Projet 1</a
+            >
+            -
+            <a href="projet1.html" target="_blank">Détails du projet</a>
+          </li>
+          <li>
+            <a href="https://github.com/votrecompte/projet2" target="_blank"
+              >Projet 2</a
+            >
+            -
+            <a href="projet2.html" target="_blank">Détails du projet</a>
+          </li>
+          <li>
+            <a href="https://github.com/votrecompte/projet3" target="_blank"
+              >Projet 3</a
+            >
+            -
+            <a href="projet3.html" target="_blank">Détails du projet</a>
+          </li>
+          <!-- Ajoutez d'autres projets ici -->
+        </ul>
+      </main>
+    </div>
+  </body>
+</html>

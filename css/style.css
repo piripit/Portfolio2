@@ -26,6 +26,7 @@ body {
     width: 100%;
     min-height: 100vh;
     background-color: var(--my-color-gris);
+    text-align: center;
 }
 
 .entete {
@@ -290,34 +291,146 @@ button:hover {
 
 }
 
-#projects-modal .modal-content {
-    width: 80%;
-    max-width: 800px;
-  }
-  
-  #projects-modal .modal-content h2 {
-    color: var(--my-color-gri);
-  }
-  
-  #projects-modal .modal-content .projects-container {
-    margin-top: 20px;
-  }
-  
-  #projects-modal .modal-content .project {
-    margin-bottom: 30px;
-    padding: 20px;
-    border: 1px solid #ccc;
-  }
-  
-  #projects-modal .modal-content .project img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  #projects-modal .modal-content .project-links a {
-    display: inline-block;
-    margin-right: 10px;
-    color: blue;
+.title_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.title_center p {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+
+/* projet */
+
+
+.content {
+    text-align: center;
+    width: 100%;
+}
+
+.navigation {
+    padding: 1rem 0;
+}
+
+.Menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.Menu li {
+    margin: 0 15px;
+}
+
+.Menu a {
     text-decoration: none;
-  }
+    color: black;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+.Menu a:hover {
+    color: var(--my-color-cy);
+}
+
+.title_center {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title_center p {
+    font-size: 1.5em;
+    color: #333;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/*css projet_cours*/
+.Container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #0044cc;
+    color: white;
+    border-radius: 8px;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+.project-list {
+    margin-top: 20px;
+}
+
+.project-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s;
+}
+
+.project-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #0044cc;
+}
+
+.project-card p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+.project-card .btn {
+    text-decoration: none;
+    background-color: #0044cc;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.project-card .btn:hover {
+    background-color: #ff6600;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* css ecole */
+
+

@@ -44,6 +44,5 @@ document.getElementById("cvDownloadBtn").addEventListener("click", function () {
   document.getElementById("cvModal").style.display = "block";
 });
 
-
 // Appeler la fonction au chargement de la page
 checkVisits();

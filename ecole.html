@@ -1,230 +1,202 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Mon École - ESPL et Formation BTS SIO</title>
+    <title>Présentation de l'École Supérieure des Pays de Loire</title>
     <style>
-      /* Style global pour éviter les débordements */
-      * {
-        box-sizing: border-box; /* Inclut la largeur des bordures et paddings dans la taille totale de l'élément */
-      }
-
       body {
         font-family: "Arial", sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f0f4f8;
-        color: #333;
-        width: 100%;
-        overflow-x: hidden; /* Évite les débordements horizontaux */
+        line-height: 1.6;
+        background-color: #f9f9f9; /* Couleur de fond douce */
       }
 
-      .contenu {
-        width: 100%; /* S'assure que le contenu principal occupe toute la largeur */
-        padding: 0 20px; /* Un petit padding pour éviter que le contenu touche les bords */
-      }
-
-      /* Styles de la barre de navigation */
-      nav {
-        background-color: #333; /* Fond noir */
-        position: sticky;
+      nav.entete {
+        background: #333; /* Couleur de fond du menu */
+        padding: 10px 0;
+        position: fixed; /* Fixer la barre de navigation en haut de la page */
         top: 0;
-        z-index: 1000;
         width: 100%;
-        margin: 0;
+        z-index: 1000; /* Mettre la barre de navigation au-dessus du contenu */
       }
 
-      .menu {
-        display: flex;
-        justify-content: space-between; /* Répartit les éléments sur toute la largeur */
-        list-style-type: none;
-        margin: 0;
+      nav.entete .menu {
+        list-style: none;
         padding: 0;
-        width: 100%;
+        text-align: center; /* Centrer le menu */
       }
 
-      .menu li {
+      nav.entete .menu li {
+        display: inline; /* Afficher les éléments en ligne */
         margin: 0 15px; /* Espacement entre les éléments */
       }
 
-      .menu a {
-        color: white;
-        text-decoration: none;
-        font-size: 16px; /* Taille du texte plus petite */
-        font-weight: bold;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        padding: 10px 15px;
-        display: inline-block;
-        border-radius: 5px;
-        transition: background-color 0.3s, transform 0.3s;
-      }
-      .menu a:hover {
-        background-color: #555;
-        transform: scale(1.05); /* Légère augmentation pour l'effet de survol */
-      }
-      .menu li:hover a {
-        color: darkcyan;
+      nav.entete .menu li a {
+        color: white; /* Couleur des liens */
+        text-decoration: none; /* Pas de soulignement */
+        font-weight: bold; /* Mettre en gras */
       }
 
-      /* Styles du header */
-      .Header {
-        text-align: center;
-        padding: 2rem 0;
-        background-color: #0044cc;
-        color: white;
-        border-radius: 8px;
+      nav.entete .menu li a:hover {
+        text-decoration: underline; /* Soulignement au survol */
       }
 
-      .Header h1 {
-        font-size: 2.5em;
-        margin-bottom: 15px;
+      main {
+        padding: 20px;
+        max-width: 900px; /* Limiter la largeur du contenu principal */
+        margin: auto; /* Centrer le contenu */
+        background: white; /* Fond blanc pour le contenu */
+        border-radius: 8px; /* Coins arrondis */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
+        margin-top: 60px; /* Espacement entre la barre de navigation et le contenu */
       }
 
-      .Header p {
-        font-size: 1.2em;
-        margin-top: 0;
-      }
-
-      /* Styles du contenu principal */
-      .Content {
-        margin-top: 30px;
-        width: 100%; /* Assure que la section prend toute la largeur */
+      h2 {
+        color: orangered; /* Couleur des sous-titres */
+        border-bottom: 2px solid orangered; /* Ligne sous les sous-titres */
+        padding-bottom: 5px;
       }
 
       section {
-        margin-bottom: 40px;
-        padding: 20px;
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden; /* Empêche les débordements à l'intérieur des sections */
+        margin-bottom: 20px;
+        padding: 15px; /* Espacement interne */
+        border-radius: 5px; /* Coins arrondis pour les sections */
+        background-color: #f1f1f1; /* Fond légèrement gris pour les sections */
       }
 
-      section h2 {
-        color: #0044cc;
-        margin-bottom: 15px;
-      }
-
-      section p {
-        line-height: 1.6;
-      }
-
-      section ul {
-        list-style-type: disc;
-        padding-left: 20px;
-      }
-
-      /* Footer Styles */
-      .footer {
+      footer {
+        background: #333;
+        color: white;
         text-align: center;
-        padding: 1rem 0;
-        color: #333;
-        background-color: #f7f7f7;
-        border-radius: 8px;
-        margin-top: 40px;
+        padding: 15px 0;
+        position: relative;
+        bottom: 0;
         width: 100%;
       }
 
-      /* Responsive Styles */
-      @media (max-width: 768px) {
-        .menu {
-          flex-direction: column; /* Les éléments sont empilés verticalement sur petit écran */
-          gap: 10px;
-          text-align: center;
-        }
+      a {
+        color: orangered; /* Couleur du lien */
+        text-decoration: none; /* Pas de soulignement */
+      }
 
-        .menu a {
-          font-size: 14px; /* Texte plus petit sur mobile */
-          padding: 10px 20px;
-        }
+      a:hover {
+        text-decoration: underline; /* Soulignement au survol */
+      }
 
-        .Header h1 {
-          font-size: 2.5em;
-        }
+      /* Styles pour les listes */
+      ul {
+        margin: 10px 0;
+        padding-left: 20px; /* Indentation pour les listes */
       }
     </style>
   </head>
   <body>
-    <div class="contenu">
-      <nav>
-        <ul class="menu">
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="#" id="about-link">A propos</a></li>
-          <li><a href="ecole.html">Formation</a></li>
-          <li><a href="#" id="skills-link">Compétences</a></li>
-          <li><a href="#">Tableau</a></li>
-          <li><a href="projet.html">Projets</a></li>
-          <li><a href="#">Veille</a></li>
-          <li><a href="#">Entreprise</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <header class="Header">
-        <h1>Bienvenue à l'ESPL</h1>
+    <nav class="entete">
+      <div class="menu">
+        <li><a href="index.html">Accueil</a></li>
+
+        <li><a href="ecole.html">Formation</a></li>
+
+        <li><a href="#">Contact</a></li>
+      </div>
+    </nav>
+
+    <main>
+      <section id="presentation">
+        <h2>Présentation de l'ESPL</h2>
         <p>
-          Découvrez l'École Supérieure des Pays de Loire et la formation BTS
-          SIO, option SLAM.
+          Située à Angers, l'École Supérieure des Pays de Loire (ESPL) a été
+          fondée en 1987. Elle propose une large gamme de formations allant du
+          Bac au Bac +5, avec un accent particulier sur l'alternance et
+          l'innovation pédagogique.
         </p>
-      </header>
-      <main class="Content">
-        <section class="school-info">
-          <h2>À propos de l'ESPL</h2>
-          <p>
-            L'École Supérieure des Pays de Loire (ESPL) est une institution
-            reconnue pour ses formations de qualité, préparant les étudiants à
-            devenir des professionnels compétents dans divers domaines, y
-            compris l'informatique, la gestion, et bien plus encore.
-          </p>
-        </section>
+        <p>
+          Notre école se concentre sur des programmes tels que les BTS dans
+          divers domaines, notamment le commerce, la gestion, et la
+          communication. L'ESPL est intégrée au campus universitaire d'Angers,
+          offrant un environnement dynamique et propice à l'apprentissage.
+        </p>
+        <p>
+          Avec un engagement fort envers l'employabilité, l'ESPL collabore
+          étroitement avec des entreprises locales et nationales pour garantir
+          que ses formations répondent aux besoins du marché.
+        </p>
+        <p>
+          Pour en savoir plus, visitez le site officiel de l'ESPL :
+          <a href="https://www.espl.fr/" target="_blank">www.espl.fr</a>
+        </p>
+      </section>
 
-        <section class="bts-sio">
-          <h2>Présentation de la formation BTS SIO</h2>
-          <p>
-            Le BTS SIO (Services Informatiques aux Organisations) est une
-            formation en deux ans qui prépare les étudiants à devenir des
-            spécialistes de l'informatique. Elle est divisée en deux options :
-          </p>
-          <ul>
-            <li>
-              <strong
-                >SLAM (Solutions Logicielles et Applications Métier)</strong
-              >
-              : Cette option forme les étudiants au développement d'applications
-              logicielles adaptées aux besoins des entreprises.
-            </li>
-            <li>
-              <strong
-                >SISR (Solutions d'Infrastructure, Systèmes et Réseaux)</strong
-              >
-              : Cette option est axée sur l'administration des systèmes et
-              réseaux informatiques.
-            </li>
-          </ul>
-        </section>
+      <section id="formation">
+        <h2>Ma Formation : BTS SIO</h2>
+        <p>
+          Le BTS Services Informatiques aux Organisations (BTS SIO) est une
+          formation de deux ans qui prépare les étudiants à devenir des
+          professionnels dans le domaine des technologies de l'information et de
+          la communication.
+        </p>
+        <p>Cette formation se divise en deux spécialités :</p>
+        <ul>
+          <li>
+            <strong
+              >Solutions Logicielles et Applications Métiers (SLAM)</strong
+            >
+            : Cette spécialité se concentre sur le développement d'applications
+            et de logiciels pour répondre aux besoins des entreprises. Les
+            étudiants apprennent à concevoir, développer et maintenir des
+            solutions logicielles adaptées aux exigences des utilisateurs.
+          </li>
+          <li>
+            <strong>Administration des Réseaux et des Systèmes (SISR)</strong> :
+            Cette spécialité est axée sur la gestion et l'administration des
+            infrastructures informatiques, y compris les réseaux et les
+            systèmes. Les étudiants acquièrent des compétences en configuration,
+            gestion et sécurisation des réseaux informatiques.
+          </li>
+        </ul>
+        <p>
+          Le BTS SIO permet d'acquérir des compétences techniques solides, ainsi
+          qu'une compréhension des enjeux organisationnels et économiques liés
+          aux systèmes d'information. Les diplômés peuvent poursuivre leurs
+          études en licence professionnelle ou intégrer directement le marché du
+          travail dans divers secteurs tels que :
+        </p>
+        <ul>
+          <li>Développement d'applications web et mobiles</li>
+          <li>Gestion de projets informatiques</li>
+          <li>Administration de systèmes et réseaux</li>
+          <li>Support technique et maintenance informatique</li>
+        </ul>
+        <p>
+          Les étudiants bénéficient également de stages en entreprise, ce qui
+          leur permet d'appliquer leurs connaissances théoriques dans un
+          environnement professionnel réel. Cela favorise leur employabilité et
+          leur permet de développer un réseau professionnel solide.
+        </p>
+        <p>
+          En somme, le BTS SIO est une formation complète qui prépare les
+          étudiants à relever les défis du secteur informatique et à s'adapter
+          aux évolutions technologiques constantes.
+        </p>
+      </section>
 
-        <section class="slam-info">
-          <h2>Option SLAM (Solutions Logicielles et Applications Métier)</h2>
-          <p>
-            L'option SLAM met l'accent sur le développement de logiciels, la
-            gestion de bases de données, et la création d'applications métiers.
-            Les étudiants apprennent à analyser les besoins des clients et à
-            concevoir des solutions logicielles performantes.
-          </p>
-          <p>Les compétences développées incluent :</p>
-          <ul>
-            <li>Programmation orientée objet</li>
-            <li>Développement web et mobile</li>
-            <li>Gestion de projets informatiques</li>
-            <li>Conception de bases de données</li>
-          </ul>
-        </section>
-      </main>
-      <footer class="footer">
-        <p>&copy; 2025 - Mon École - ESPL</p>
-      </footer>
-    </div>
+      <section id="contact">
+        <h2>Contactez-nous</h2>
+        <p>
+          Pour plus d'informations, veuillez nous contacter à l'adresse suivante
+          :
+        </p>
+        <p>Email : <a href="mailto:contact@espl.fr">contact@espl.fr</a></p>
+        <p>Téléphone : <a href="tel:+33241000000">02 41 00 00 00</a></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2023 École Supérieure des Pays de Loire. Tous droits réservés.
+      </p>
+    </footer>
   </body>
 </html>

@@ -44,6 +44,7 @@
         background-color: #555;
         transform: scale(1.05); /* Légère augmentation pour l'effet de survol */
       }
+
       .menu li:hover a {
         color: darkcyan;
       }
@@ -51,30 +52,46 @@
       /* Autres styles */
       .Container {
         padding: 2rem;
+        text-align: left; /* Alignement à gauche */
       }
 
-      .header h1 {
-        text-align: center;
+      .project-list {
+        margin-top: 20px; /* Espacement au-dessus de la liste des projets */
+      }
+
+      .project-list img {
+        max-width: 500px; /* Limiter la largeur de l'image */
+        height: auto; /* Garder le ratio d'aspect */
+        margin-right: 20px; /* Espacement à droite de l'image */
+      }
+
+      .button-container {
+        display: flex; /* Utiliser Flexbox pour aligner l'image et le bouton */
+        align-items: center; /* Centrer verticalement */
+      }
+
+      .info-container {
+        display: none; /* Cacher par défaut */
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #f9f9f9;
+        text-align: left; /* Alignement à gauche pour le texte */
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: darkblue;
         color: white;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
       }
 
-      .project-list ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .project-list li {
-        margin: 10px 0;
-      }
-
-      .project-list a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-      }
-
-      .project-list a:hover {
-        color: #555;
+      button:hover {
+        background-color: #555;
       }
     </style>
   </head>
@@ -92,31 +109,109 @@
         <h1>Projets de Cours</h1>
       </header>
       <main class="project-list">
-        <ul>
-          <li>
-            <a href="https://github.com/votrecompte/projet1" target="_blank"
-              >Projet 1</a
-            >
-            -
-            <a href="projet1.html" target="_blank">Détails du projet</a>
-          </li>
-          <li>
-            <a href="https://github.com/votrecompte/projet2" target="_blank"
-              >Projet 2</a
-            >
-            -
-            <a href="projet2.html" target="_blank">Détails du projet</a>
-          </li>
-          <li>
-            <a href="https://github.com/votrecompte/projet3" target="_blank"
-              >Projet 3</a
-            >
-            -
-            <a href="projet3.html" target="_blank">Détails du projet</a>
-          </li>
-          <!-- Ajoutez d'autres projets ici -->
-        </ul>
+        <div class="imo">
+          <h1>Calculatrice prêt immobilier</h1>
+          <div class="button-container">
+            <img src="img/immobilier.PNG" alt="imo" />
+            <button id="infoButton">Plus d'infos ></button>
+          </div>
+          <div id="infoContainer" class="info-container">
+            <h2>Compétences Acquises</h2>
+            <p>
+              En travaillant sur le projet de la calculatrice immobilière, j'ai
+              acquis plusieurs compétences clés :
+            </p>
+            <ul>
+              <li>
+                <strong>HTML/CSS :</strong> Création d'une interface utilisateur
+                responsive et esthétique.
+              </li>
+              <li>
+                <strong>JavaScript :</strong> Utilisation de JavaScript pour
+                gérer les interactions utilisateur et effectuer des calculs
+                dynamiques.
+              </li>
+              <li>
+                <strong>Flexbox :</strong> Mise en page d'éléments avec Flexbox
+                pour un alignement intuitif.
+              </li>
+              <li>
+                <strong>Gestion des événements :</strong> Manipulation des
+                événements pour afficher et masquer des informations.
+              </li>
+            </ul>
+
+            <h2>Langages Utilisés</h2>
+            <p>Ce projet a été réalisé en utilisant les langages suivants :</p>
+            <ul>
+              <li>HTML : Pour la structure de la page.</li>
+              <li>CSS : Pour le style et la mise en page.</li>
+              <li>
+                JavaScript : Pour la logique de calcul et l'interaction
+                dynamique.
+              </li>
+            </ul>
+
+            <h2>Difficultés Rencontrées</h2>
+            <p>
+              Au cours du développement de ce projet, j'ai rencontré plusieurs
+              défis :
+            </p>
+            <ul>
+              <li>
+                <strong>Calculs financiers :</strong> Comprendre et implémenter
+                les formules d'amortissement a nécessité des recherches
+                approfondies.
+              </li>
+              <li>
+                <strong>Gestion des états :</strong> Gérer l'affichage des
+                informations et les états des boutons a nécessité une attention
+                particulière pour éviter les erreurs.
+              </li>
+              <li>
+                <strong>Responsive Design :</strong> S'assurer que l'interface
+                était utilisable sur différents appareils a nécessité des
+                ajustements CSS.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <br />
+        <hr />
+        <div class="imo">
+          <h1>Calculatrice prêt immobilier</h1>
+          <div class="button-container">
+            <img src="img/immobilier.PNG" alt="imo" />
+            <button id="infoButton">Plus d'infos ></button>
+          </div>
+          <div id="infoContainer" class="info-container">
+            <p>
+              Cette calculatrice vous permet de simuler vos prêts immobiliers en
+              fonction de votre montant, taux d'intérêt et durée.
+            </p>
+            <p>
+              Entrez les informations nécessaires pour obtenir un tableau
+              d'amortissement détaillé.
+            </p>
+          </div>
+        </div>
       </main>
     </div>
+
+    <script>
+      document
+        .getElementById("infoButton")
+        .addEventListener("click", function () {
+          const infoContainer = document.getElementById("infoContainer");
+          if (
+            infoContainer.style.display === "none" ||
+            infoContainer.style.display === ""
+          ) {
+            infoContainer.style.display = "block";
+          } else {
+            infoContainer.style.display = "none";
+          }
+        });
+    </script>
   </body>
 </html>

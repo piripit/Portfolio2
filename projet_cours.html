@@ -5,226 +5,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projets de Cours</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
+      /* Reset & Styles de base */
+      * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        background-color: #f0f0f5;
-        font-size: 18px;
       }
-
+      body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+      /* Navigation */
       nav {
-        background-color: #3b3b3b;
+        background: #3b3b3b;
         position: sticky;
         top: 0;
         width: 100%;
         z-index: 1000;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       }
-
-      .menu {
+      nav ul {
         display: flex;
-        list-style-type: none;
-        margin: 0;
-        padding: 15px 30px;
         justify-content: center;
+        list-style: none;
+        padding: 1rem;
       }
-
-      .menu li {
-        margin: 0 25px;
+      nav ul li {
+        margin: 0 15px;
       }
-
-      .menu a {
-        color: white;
+      nav ul li a {
+        color: #fff;
         text-decoration: none;
-        font-size: 18px;
         font-weight: bold;
-        letter-spacing: 1px;
         text-transform: uppercase;
-        padding: 12px 25px;
-        border-radius: 5px;
-        transition: background-color 0.3s, transform 0.3s;
+        padding: 0.5rem 1rem;
+        transition: background 0.3s;
+        border-radius: 4px;
       }
-
-      .menu li a:hover {
-        background-color: darkcyan;
-        transform: scale(1.05);
+      nav ul li a:hover {
+        background: darkcyan;
       }
-
-      .Container {
-        padding: 3rem 5%;
+      /* Conteneur principal */
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 2rem 5%;
         text-align: center;
       }
-
-      .header h1 {
-        font-size: 36px;
-        color: #333;
-        margin-bottom: 2rem;
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
       }
-
-      .project-list {
+      /* Grille de projets */
+      .project-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
       }
-
       .project-card {
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         overflow: hidden;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s;
       }
-
       .project-card:hover {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
       }
-
       .project-card img {
         width: 100%;
-        height: 250px;
-        object-fit: cover; /* Pour que l'image couvre toute la zone sans être coupée ni déformée */
-        border-bottom: 5px solid #3b3b3b;
-        object-position: center; /* Centrer l'image dans le conteneur */
+        height: 200px;
+        object-fit: cover;
       }
-
       .card-content {
-        padding: 20px;
-        color: #333;
-      }
-
-      .card-content h2 {
-        font-size: 24px;
-        margin-bottom: 15px;
-      }
-
-      .card-content p {
-        font-size: 16px;
-        margin-bottom: 15px;
-      }
-
-      button {
-        padding: 12px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        background-color: #3b3b3b;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        transition: background-color 0.3s;
-      }
-
-      button:hover {
-        background-color: #555;
-      }
-
-      .info-container {
-        display: none;
-        margin-top: 15px;
-        padding: 15px;
-        border: 1px solid #ccc;
-        background-color: #f9f9f9;
+        padding: 1rem;
         text-align: left;
+      }
+      .card-content h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .info-btn {
+        display: inline-block;
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        background: #3b3b3b;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .info-btn:hover {
+        background: #555;
+      }
+      /* Styles des modales */
+      .modal {
+        display: none; /* cachée par défaut */
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .modal-content {
+        background: #fff;
         border-radius: 8px;
-        font-size: 16px;
+        max-width: 800px;
+        width: 100%;
+        padding: 1.5rem;
+        position: relative;
+        text-align: left;
+      }
+      .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 1.5rem;
+        color: #333;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
     <nav>
-      <ul class="menu">
+      <ul>
         <li><a href="index.html">Accueil</a></li>
         <li><a href="#">Tableau</a></li>
         <li><a href="projet.html">Projets</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-    <div class="Container">
-      <header class="header">
+    <div class="container">
+      <header>
         <h1>Projets de Cours</h1>
       </header>
-      <main class="project-list">
-        <div class="project-card">
+      <main class="project-grid">
+        <!-- Carte Projet 1 -->
+        <div class="project-card" data-project="project1">
           <img src="img/immobilier.PNG" alt="Calculatrice prêt immobilier" />
           <div class="card-content">
             <h2>Calculatrice prêt immobilier</h2>
-            <button id="infoButton1">Plus d'infos ></button>
-            <div id="infoContainer1" class="info-container">
-              <h3>Compétences Acquises</h3>
-              <p>
-                En travaillant sur ce projet, j'ai acquis des compétences clés
-                en HTML, CSS et JavaScript.
-              </p>
-              <ul>
-                <li>
-                  <strong>HTML/CSS :</strong> Création d'une interface
-                  responsive.
-                </li>
-                <li>
-                  <strong>JavaScript :</strong> Calculs dynamiques et gestion
-                  des événements.
-                </li>
-                <li>
-                  <strong>Flexbox :</strong> Mise en page avec Flexbox pour une
-                  disposition fluide.
-                </li>
-              </ul>
-            </div>
+            <button class="info-btn" data-target="modal1">Plus d'infos ></button>
           </div>
         </div>
-        <div class="project-card">
+        <!-- Carte Projet 2 -->
+        <div class="project-card" data-project="project2">
           <img src="img/formation.png" alt="Bienvenu-Formation" />
           <div class="card-content">
             <h2>Bienvenu-Formation</h2>
-            <button id="infoButton2">Plus d'infos ></button>
-            <div id="infoContainer2" class="info-container">
-              <p>
-                Cette plateforme permet de simuler des prêts immobiliers selon
-                les critères de l'utilisateur.
-              </p>
-            </div>
+            <button class="info-btn" data-target="modal2">Plus d'infos ></button>
           </div>
         </div>
       </main>
     </div>
+    <!-- Modale pour le Projet 1 -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" data-target="modal1">&times;</span>
+        <h2>Calculatrice prêt immobilier</h2>
+        <p>
+          Ce projet met en avant une interface intuitive et responsive qui permet de simuler un prêt immobilier.  
+        </p>
+        <ul>
+          <li><strong>HTML/CSS :</strong> Structure et mise en forme responsive</li>
+          <li><strong>JavaScript :</strong> Calculs dynamiques et gestion d'événements</li>
+          <li><strong>Flexbox :</strong> Mise en page fluide</li>
+        </ul>
+        <!-- Tu pourras ici ajouter bien d'autres sections et fonctionnalités -->
+      </div>
+    </div>
+    <!-- Modale pour le Projet 2 -->
+    <div id="modal2" class="modal">
+      <div class="modal-content">
+        <span class="close-modal" data-target="modal2">&times;</span>
+        <h2>Bienvenu-Formation</h2>
+        <p>
+          Cette plateforme permet de simuler des prêts immobiliers selon les critères de l'utilisateur.  
+        </p>
+        <!-- D'autres contenus (vidéos, témoignages, etc.) pourront être ajoutés ici par la suite -->
+      </div>
+    </div>
     <script>
-      document
-        .getElementById("infoButton1")
-        .addEventListener("click", function () {
-          const infoContainer1 = document.getElementById("infoContainer1");
-          const infoContainer2 = document.getElementById("infoContainer2");
-
-          // Si l'autre section est ouverte, la fermer
-          if (infoContainer2.style.display === "block") {
-            infoContainer2.style.display = "none";
+      // Ouvrir la modale
+      const infoButtons = document.querySelectorAll('.info-btn');
+      infoButtons.forEach((btn) => {
+        btn.addEventListener('click', function () {
+          const targetModalId = this.getAttribute('data-target');
+          const modal = document.getElementById(targetModalId);
+          if (modal) {
+            modal.style.display = 'flex';
           }
-
-          // Alterner l'affichage de la section actuelle
-          infoContainer1.style.display =
-            infoContainer1.style.display === "none" ||
-            infoContainer1.style.display === ""
-              ? "block"
-              : "none";
         });
+      });
 
-      document
-        .getElementById("infoButton2")
-        .addEventListener("click", function () {
-          const infoContainer2 = document.getElementById("infoContainer2");
-          const infoContainer1 = document.getElementById("infoContainer1");
-
-          // Si l'autre section est ouverte, la fermer
-          if (infoContainer1.style.display === "block") {
-            infoContainer1.style.display = "none";
+      // Fermer la modale au clic sur la croix
+      const closeButtons = document.querySelectorAll('.close-modal');
+      closeButtons.forEach((btn) => {
+        btn.addEventListener('click', function () {
+          const targetModalId = this.getAttribute('data-target');
+          const modal = document.getElementById(targetModalId);
+          if (modal) {
+            modal.style.display = 'none';
           }
-
-          // Alterner l'affichage de la section actuelle
-          infoContainer2.style.display =
-            infoContainer2.style.display === "none" ||
-            infoContainer2.style.display === ""
-              ? "block"
-              : "none";
         });
+      });
+
+      // Fermer la modale si on clique en dehors du contenu
+      window.addEventListener('click', function (e) {
+        document.querySelectorAll('.modal').forEach((modal) => {
+          if (e.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+      });
     </script>
   </body>
 </html>

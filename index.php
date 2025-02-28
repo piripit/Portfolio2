@@ -15,7 +15,7 @@
     <nav class="entete">
       <div class="menu">
         <li><a href="#">Accueil</a></li>
-        <li><a href="about.php" id="about-link">About and skills</a></li>
+        <li><a href="about.php" >About and skills</a></li>
         <li><a href="ecole.php">Formation</a></li>
         <li><a href="#">Tableau</a></li>
         <li><a href="projet.php">Projets</a></li>

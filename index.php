@@ -15,9 +15,8 @@
     <nav class="entete">
       <div class="menu">
         <li><a href="#">Accueil</a></li>
-        <li><a href="#" id="about-link">About</a></li>
+        <li><a href="about.php" id="about-link">About and skills</a></li>
         <li><a href="ecole.php">Formation</a></li>
-        <li><a href="#" id="skills-link">Skills</a></li>
         <li><a href="#">Tableau</a></li>
         <li><a href="projet.php">Projets</a></li>
         <li><a href="#">Veille</a></li>
@@ -43,64 +42,7 @@
       </div>
     </div>
   </div>
-  <div id="about-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <img src="img/moriel-removebg-preview.png" alt="About Image" />
-      <h2>À propos de moi</h2>
-      <br />
-      <p>
-        Moriel, c'est moi en quelques mots ! Polyvalent, je jongle avec les
-        défis grâce à ma rigueur et ma motivation inébranlables. Ma capacité à
-        m'adapter à toutes les situations témoigne de ma flexibilité. À la
-        fois discret et sociable, je suis à l'écoute des attentes de mon
-        entourage. Ma véritable passion réside dans le domaine technologique
-        et son évolution constante. J'aspire à contribuer activement à cette
-        avancée, mettant ainsi ma pierre à l'édifice de l'innovation
-      </p>
-    </div>
-  </div>
 
-  <div id="skills-modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>Mes compétences</h2>
-      <div class="skills-container">
-        <div class="skill">
-          <img src="img/logo-html.jpg" alt="HTML" />
-          <h3>HTML</h3>
-        </div>
-        <div class="skill">
-          <img src="img/logo-css.jpg" alt="CSS" />
-          <h3>CSS</h3>
-        </div>
-        <div class="skill">
-          <img src="img/js.png" alt="JavaScript" />
-          <h3>JavaScript</h3>
-        </div>
-        <div class="skill">
-          <img src="img/php.jpg" alt="PHP" />
-          <h3>PHP</h3>
-        </div>
-        <div class="skill">
-          <img src="img/logo-git.jpg" alt="GIT" />
-          <h3>GIT</h3>
-        </div>
-        <div class="skill">
-          <img src="img/sgbd.jpg" alt="MySQL/SQL" />
-          <h3>MySQL/SQL</h3>
-        </div>
-        <div class="skill">
-          <img src="img/logo-python.jpg" alt="MySQL/SQL" />
-          <h3>PYTHON</h3>
-        </div>
-        <div class="skill">
-          <img src="img/logo-c.jpg" alt="MySQL/SQL" />
-          <h3>C/C++</h3>
-        </div>
-      </div>
-    </div>
-  </div>
   <div id="cvModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
